@@ -4,10 +4,45 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="style.css">
-      <script src="app.js" defer></script>
-      <title>Library</title>
+      <script src="app.js" type="module" defer></script>
+      <title>Libris | Hem</title>
 </head>
 <body>
-      
+      <div class="wrapper">
+            <header class="header">
+                  <h1 class="page-title">Libris</h1>
+                  <form action="">
+                        <input type="text" placeholder="Titel |Författare | ISBN">
+                        <button class="search-btn">Sök</button>
+                  </form>
+                  <a class="account-link">
+                        <p class="account-text">Mitt konto</p>
+                  </a>
+                  <nav class="header-nav">
+                        <ul class="header-nav-list">
+                              <li class="header-nav-item">Hem</li>
+                              <li class="header-nav-item">Mitt bibliotek</li>
+                              <li class="header-nav-item">Hitta böcker</li>
+                        </ul>
+                  </nav>
+            </header>
+            <section class="banner">
+                  <h2 class="banner-title">Upptäck våra böcker</h2>
+                  <button class="read-more-btn">Se mer</button>
+            </section>
+            <main class="main">
+                  <section id="selection-section"></section>
+            </main>
+            <footer class="footer">
+                  <nav class="footer-nav">
+                        <ul class="footer-nav-list">
+                              <li class="footer-nav-item">Om oss</li>
+                              <li class="footer-nav-item">Hjälp</li>
+                              <li class="footer-nav-item">Kontakt</li>
+                        </ul>
+                  </nav>
+                  <p class="copyright-text">© 2024 Libris AB</p>
+            </footer>
+      </div>
 </body>
 </html>
