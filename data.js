@@ -1,5 +1,5 @@
 const BOOKS_URL =
-  "http://openlibrary.org/subjects/fiction.json?published_in=1900-2024&limit=40&offset=20";
+  "http://openlibrary.org/subjects/fiction.json?&limit=10&offset=20";
 
 const fetchBooks = async () => {
   try {
