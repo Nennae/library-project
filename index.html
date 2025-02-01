@@ -11,9 +11,9 @@
       <div class="wrapper">
             <header class="header">
                   <h1 class="page-title">Libris</h1>
-                  <form action="">
-                        <input type="text" placeholder="Titel | Författare | ISBN">
-                        <button class="search-btn">Sök</button>
+                  <form action="" id="search-form">
+                        <input id="search-input" type="text" placeholder="Titel | Författare | ISBN">
+                        <button type="submit" id="search-btn">Sök</button>
                   </form>
                   <a class="account-link">
                         <p class="account-text">Mitt konto</p>
@@ -26,12 +26,15 @@
                         </ul>
                   </nav>
             </header>
+            <section id="searched-books-container"></section>
             <section class="banner">
                   <h2 class="banner-title">Upptäck våra böcker</h2>
                   <button class="read-more-btn">Se mer</button>
             </section>
             <main class="main">
-                  <section id="selection-section"></section>
+                  <h2>Urval av böcker</h2>
+                  <section id="selection-section">
+                  </section>
             </main>
             <footer class="footer">
                   <nav class="footer-nav">

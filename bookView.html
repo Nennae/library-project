@@ -3,10 +3,42 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Book view</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="scripts/app.js" type="module" defer></script>
+      <title>Libris | Book details</title>
 </head>
 <body>
-      <div class="bookView-wrapper">    
+      <div class="bookView-wrapper">
+            <main class="book-main">
+                  <header class="header">
+                        <h1 class="page-title">Libris</h1>
+                        <form action="" id="search-form">
+                              <input id="search-input" type="text" placeholder="Titel | Författare | ISBN">
+                              <button type="submit" id="search-btn">Sök</button>
+                        </form>
+                        <a class="account-link">
+                              <p class="account-text">Mitt konto</p>
+                        </a>
+                        <nav class="header-nav">
+                              <ul class="header-nav-list">
+                                    <li class="header-nav-item">Hem</li>
+                                    <li class="header-nav-item">Mitt bibliotek</li>
+                                    <li class="header-nav-item">Hitta böcker</li>
+                              </ul>
+                        </nav>
+                  </header>
+                  <section id="searched-books-container"></section>
+            </main>
+            <footer class="footer">
+                  <nav class="footer-nav">
+                        <ul class="footer-nav-list">
+                              <li class="footer-nav-item">Om oss</li>
+                              <li class="footer-nav-item">Hjälp</li>
+                              <li class="footer-nav-item">Kontakt</li>
+                        </ul>
+                  </nav>
+                  <p class="copyright-text">© 2024 Libris AB</p>
+            </footer>
       </div>
 </body>
 </html>
