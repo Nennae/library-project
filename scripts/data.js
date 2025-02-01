@@ -12,8 +12,8 @@ const fetchBooks = async () => {
     const data = await response.json();
     const booksWithCovers = data.works.map((book) => {
       const coverUrl = book.cover_id
-        ? `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`
-        : null;
+        ? `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`
+        : "../Assets/images/book-cover-placeholder.jpg";
       return { ...book, coverUrl };
     });
     console.log("Fetched books data with covers:", booksWithCovers);
@@ -40,8 +40,8 @@ const fetchSearchBooks = async (query) => {
     const data = await response.json();
     const booksWithCovers = data.docs.map((book) => {
       const coverUrl = book.cover_i
-        ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
-        : null;
+        ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+        : "../Assets/images/book-cover-placeholder.jpg";
       return { ...book, coverUrl };
     });
     console.log("Fetched search books data with covers:", booksWithCovers);
@@ -57,4 +57,3 @@ const fetchSearchBooks = async (query) => {
 };
 
 export { fetchBooks, fetchSearchBooks };
-
