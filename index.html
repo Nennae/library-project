@@ -3,7 +3,15 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+                  rel="stylesheet">
+                  <link rel="stylesheet" href="./Styles/style.css">
       <script src="scripts/app.js" type="module" defer></script>
       <title>Libris | Home</title>
 </head>
@@ -15,9 +23,13 @@
                         <input id="search-input" type="text" placeholder="Titel | Författare | ISBN">
                         <button type="submit" id="search-btn">Sök</button>
                   </form>
+                  <div class="account-wrapper">
+                  <img class="account-icon" src="./Assets/icons/carbon--account.svg" alt="">
                   <a class="account-link">
                         <p class="account-text">Mitt konto</p>
                   </a>
+                  </div>
+                  </header>
                   <nav class="header-nav">
                         <ul class="header-nav-list">
                               <li class="header-nav-item">Hem</li>
@@ -25,16 +37,28 @@
                               <li class="header-nav-item">Hitta böcker</li>
                         </ul>
                   </nav>
-            </header>
-            <section id="searched-books-container"></section>
-            <section class="banner">
+            <!-- <section class="banner">
                   <h2 class="banner-title">Upptäck våra böcker</h2>
                   <button class="read-more-btn">Se mer</button>
-            </section>
+            </section> -->
             <main class="main">
-                  <h2>Urval av böcker</h2>
+                  <section id="searched-books-container"></section>
+                  <h3>Urval av böcker</h3>
+                  <div class="sections-container">
                   <section id="selection-section">
                   </section>
+                  <section class="category-section">
+                        <button class="category-items">Skönlitteratur</button>
+                        <button class="category-items">Historia</button>
+                        <button class="category-items">Konst</button>
+                        <button class="category-items">Psykologi</button>
+                        <button class="category-items">Biografier</button>
+                        <button class="category-items">Teknologi</button>
+                        <button class="category-items">Medicin</button>
+                        <button class="category-items">Naturvetenskap</button>
+                        <button class="category-items">Resor</button>
+                  </section>
+                  </div>
             </main>
             <footer class="footer">
                   <nav class="footer-nav">

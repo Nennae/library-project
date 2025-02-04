@@ -3,31 +3,42 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="style.css">
-      <script src="scripts/app.js" type="module" defer></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+      <link rel="stylesheet" href="./Styles/style.css">
+      <script src="Scripts/app.js" type="module" defer></script>
       <title>Libris | Book details</title>
 </head>
 <body>
       <div class="bookView-wrapper">
-            <main class="book-main">
                   <header class="header">
                         <h1 class="page-title">Libris</h1>
                         <form action="" id="search-form">
                               <input id="search-input" type="text" placeholder="Titel | Författare | ISBN">
                               <button type="submit" id="search-btn">Sök</button>
                         </form>
-                        <a class="account-link">
-                              <p class="account-text">Mitt konto</p>
-                        </a>
-                        <nav class="header-nav">
-                              <ul class="header-nav-list">
-                                    <li class="header-nav-item">Hem</li>
-                                    <li class="header-nav-item">Mitt bibliotek</li>
-                                    <li class="header-nav-item">Hitta böcker</li>
-                              </ul>
-                        </nav>
+                        <div class="account-wrapper">
+                              <img class="account-icon" src="./Assets/icons/carbon--account.svg" alt="">
+                              <a class="account-link">
+                                    <p class="account-text">Mitt konto</p>
+                              </a>
+                        </div>
                   </header>
-                  <section id="searched-books-container"></section>
+                  <nav class="header-nav">
+                        <ul class="header-nav-list">
+                              <li class="header-nav-item">Hem</li>
+                              <li class="header-nav-item">Mitt bibliotek</li>
+                              <li class="header-nav-item">Hitta böcker</li>
+                        </ul>
+                  </nav>
+                  <main id="book-view-main"></main>
+                  <section id="book-details"></section>
             </main>
             <footer class="footer">
                   <nav class="footer-nav">

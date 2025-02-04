@@ -15,16 +15,15 @@ export async function checkBooks() {
       selection_books = fetchedBooks;
       displayBooks(selection_books);
     } catch (error) {
-      console.error("Failed to fetch and display books:", error);
+      throw error;
     }
   }
 }
-
+// Stores the books array in localStorage as searched_books
 export function saveSearchedBooks(books) {
   localStorage.setItem("searched_books", JSON.stringify(books));
 }
-
+// Retrieves the books array from localStorage and parses search_books array or an empty array if it doesn't exist
 export function getSearchedBooks() {
   return JSON.parse(localStorage.getItem("searched_books")) || [];
 }
-// localStorage.clear();

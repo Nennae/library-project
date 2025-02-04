@@ -2,7 +2,7 @@
 @import url(layout.css);
 
 /* Wrapper for the whole page within body tag */
-.wrapper {
+body {
       font-family: var(--body-font-family);
       h1 {
             color: var(--l-color);
@@ -58,6 +58,7 @@
                   display: grid;
                   grid-template-columns: repeat(3, 1fr);
                   gap: 2em;
+                  margin-bottom: 4em;
 
                         .book-item {
                               display: flex;
@@ -85,7 +86,7 @@
 /* Selection of 10 books */
 #selection-section {
       background-color: rgb(235, 233, 233);
-      max-width: 25em;
+      width: 23em;
       padding: 2em;
       border-radius: 15px;
       .book {
