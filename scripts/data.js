@@ -1,7 +1,13 @@
-const BOOKS_URL =
-  "http://openlibrary.org/subjects/fiction.json?&limit=10&offset=20";
+function getCoverUrl(coverId) {
+  return coverId
+    ? `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`
+    : "../Assets/images/book-cover-placeholder.jpg";
+}
 
 const fetchBooks = async () => {
+  const randomOffset = Math.floor(Math.random() * 100);
+  const BOOKS_URL = `http://openlibrary.org/subjects/fiction.json?limit=10&offset=${randomOffset}`;
+
   try {
     const response = await fetch(BOOKS_URL);
     if (!response.ok) {
@@ -10,26 +16,22 @@ const fetchBooks = async () => {
       );
     }
     const data = await response.json();
-    const booksWithCovers = data.works.map((book) => {
-      const coverUrl = book.cover_id
-        ? `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`
-        : "../Assets/images/book-cover-placeholder.jpg";
-      return { ...book, coverUrl };
-    });
+    const booksWithCovers = data.works.map((book) => ({
+      ...book,
+      coverUrl: getCoverUrl(book.cover_id),
+    }));
     console.log("Fetched books data with covers:", booksWithCovers);
     return booksWithCovers;
   } catch (error) {
-    if (error.name === "TypeError") {
-      console.error("There was a problem with the fetch operation:", error);
-    } else {
-      console.error("Failed to fetch books:", error);
-    }
+    console.error("Failed to fetch books:", error);
     throw error;
   }
 };
 
-const fetchSearchBooks = async (query) => {
-  const SEARCH_URL = `https://openlibrary.org/search.json?q=${query}`;
+const fetchSearchBooks = async (query, page = 1) => {
+  const limit = 10;
+  const SEARCH_URL = `https://openlibrary.org/search.json?q=${query}&page=${page}&limit=${limit}`;
+
   try {
     const response = await fetch(SEARCH_URL);
     if (!response.ok) {
@@ -38,20 +40,14 @@ const fetchSearchBooks = async (query) => {
       );
     }
     const data = await response.json();
-    const booksWithCovers = data.docs.map((book) => {
-      const coverUrl = book.cover_i
-        ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
-        : "../Assets/images/book-cover-placeholder.jpg";
-      return { ...book, coverUrl };
-    });
+    const booksWithCovers = data.docs.map((book) => ({
+      ...book,
+      coverUrl: getCoverUrl(book.cover_i),
+    }));
     console.log("Fetched search books data with covers:", booksWithCovers);
-    return booksWithCovers;
+    return { books: booksWithCovers, numFound: data.numFound };
   } catch (error) {
-    if (error.name === "TypeError") {
-      console.error("There was a problem with the fetch operation:", error);
-    } else {
-      console.error("Failed to fetch search results:", error);
-    }
+    console.error("Failed to fetch search results:", error);
     throw error;
   }
 };

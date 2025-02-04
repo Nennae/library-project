@@ -1,0 +1,31 @@
+.header{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      form,
+      .account-wrapper {
+            display: flex;
+            gap: .5em;
+            align-items: center;
+      }
+}
+
+.header-nav-list {
+      display: flex;
+      justify-content: center;
+      gap: 10em;
+}
+
+.category-section {
+      display: grid;
+grid-template-columns: repeat(3, 10em);
+      grid-template-rows: repeat(3, 4em);
+}
+
+#selection-section {
+      display: grid;
+            grid-template-columns: repeat(4, 5em);
+            grid-template-rows: repeat(2, 7em);
+}

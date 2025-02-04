@@ -19,3 +19,12 @@ export async function checkBooks() {
     }
   }
 }
+
+export function saveSearchedBooks(books) {
+  localStorage.setItem("searched_books", JSON.stringify(books));
+}
+
+export function getSearchedBooks() {
+  return JSON.parse(localStorage.getItem("searched_books")) || [];
+}
+// localStorage.clear();
